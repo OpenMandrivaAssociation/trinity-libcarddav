@@ -9,8 +9,7 @@
 
 %define tde_pkg libcarddav
 %define tde_prefix /opt/trinity
-%define tde_includedir %{tde_prefix}/include
-%define tde_libdir %{tde_prefix}/%{_lib}
+
 
 %define libcarddav %{_lib}carddav
 
@@ -125,7 +124,7 @@ This package contains the development files.
 
 %conf -p
 unset QTDIR QTINC QTLIB
-export PATH="%{tde_bindir}:${PATH}"
+export PATH="%{tde_prefix}/bin:${PATH}"
 
 
 %install -a 
