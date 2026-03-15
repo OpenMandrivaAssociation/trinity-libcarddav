@@ -25,7 +25,7 @@
 Name:		trinity-%{tde_pkg}
 Epoch:		%{tde_epoch}
 Version:	0.6.2
-Release:	%{?tde_version:%{tde_version}_}4
+Release:	%{?tde_version:%{tde_version}_}5
 Summary:	A portable CardDAV client implementation
 Group:		System/Libraries
 URL:		http://www.trinitydesktop.org/
@@ -65,8 +65,6 @@ Build dependencies are minimal, requiring only libcurl.
 Summary:	A portable CardDAV client implementation
 Group:		System/Libraries
 
-Obsoletes:	trinity-libcarddav < %{?epoch:%{epoch}:}%{version}-%{release}
-
 %description -n %{libname}0
 Libcarddav is a portable CardDAV client implementation originally developed for the Trinity PIM suite. 
 It incorporates full list, get, add, modify, and delete functionality per the latest CardDAV standards. 
@@ -83,11 +81,9 @@ Build dependencies are minimal, requiring only libcurl.
 %package -n %{devname}
 Summary:	A portable CardDAV client implementation (Development Files)
 Group:		Development/Libraries/Other
-Requires:	%{libname}0 = %{?epoch:%{epoch}:}%{version}-%{release}
+Requires:	%{libname}0 = %{EVRD}
 %{?libcurl_devel:Requires: %{libcurl_devel}}
 Requires:	pkgconfig(glib-2.0)
-
-Obsoletes:	trinity-libcarddav-devel < %{?epoch:%{epoch}:}%{version}-%{release}
 
 %description -n %{devname}
 Libcarddav is a portable CardDAV client implementation originally developed for the Trinity PIM suite. 
