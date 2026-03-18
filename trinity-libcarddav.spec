@@ -1,7 +1,6 @@
 %bcond clang 1
 
 # TDE variables
-%define tde_epoch 2
 %if "%{?tde_version}" == ""
 %define tde_version 14.1.5
 %endif
@@ -23,9 +22,8 @@
 
 
 Name:		trinity-%{tde_pkg}
-Epoch:		%{tde_epoch}
 Version:	0.6.2
-Release:	%{?tde_version:%{tde_version}_}5
+Release:	%{?tde_version:%{tde_version}_}6
 Summary:	A portable CardDAV client implementation
 Group:		System/Libraries
 URL:		http://www.trinitydesktop.org/
